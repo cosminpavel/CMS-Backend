@@ -1,6 +1,6 @@
-import com.ubb.cms.Conference;
-import com.ubb.cms.Edition;
-import com.ubb.cms.User;
+import com.ubb.cms.model.Conference;
+import com.ubb.cms.model.Edition;
+import com.ubb.cms.repository.EditionRepository;
 
 import java.util.Date;
 import java.util.List;

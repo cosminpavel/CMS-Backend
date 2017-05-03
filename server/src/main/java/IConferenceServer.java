@@ -1,5 +1,5 @@
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
-import com.ubb.cms.*;
+import com.ubb.cms.model.Edition;
+import com.ubb.cms.model.User;
 
 import java.util.List;
 

@@ -1,6 +1,7 @@
-import com.ubb.cms.Review;
-import com.ubb.cms.utils.ReviewStatus;
-import com.ubb.cms.utils.UserPaperEmb;
+import com.ubb.cms.model.Review;
+import com.ubb.cms.model.utils.ReviewStatus;
+import com.ubb.cms.model.utils.UserPaperEmb;
+import com.ubb.cms.repository.ReviewRepository;
 
 import java.util.List;
 

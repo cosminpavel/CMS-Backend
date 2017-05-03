@@ -1,5 +1,3 @@
-import com.ubb.cms.Participation;
-import com.ubb.cms.utils.UserEditionEmb;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

@@ -1,4 +1,4 @@
-import com.ubb.cms.User;
+import com.ubb.cms.model.User;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

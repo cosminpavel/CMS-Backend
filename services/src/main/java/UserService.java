@@ -1,4 +1,5 @@
-import com.ubb.cms.User;
+import com.ubb.cms.model.User;
+import com.ubb.cms.repository.UserRepository;
 
 import java.util.List;
 
