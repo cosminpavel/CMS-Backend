@@ -7,11 +7,6 @@
         http://www.springframework.org/schema/util
         http://www.springframework.org/schema/util/spring-util.xsd">
 
-
-
-
-
-
     <bean id="userRepository" class="UserRepository">
 
     </bean>

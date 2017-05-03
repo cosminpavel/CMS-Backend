@@ -5,8 +5,8 @@ import java.util.List;
 /**
  * Created by Raul on 24/04/2017.
  */
-public class UserService {
-
+public class UserService
+{
     private UserRepository userRepository;
 
     public UserService(UserRepository userRepository)
@@ -33,6 +33,4 @@ public class UserService {
     {
         return userRepository.findById(key);
     }
-
-
 }
