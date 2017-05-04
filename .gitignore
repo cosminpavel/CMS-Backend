@@ -31,8 +31,8 @@ hs_err_pid*
 
 ### Gradle ###
 .gradle
-/*/build/
-/build/
+/*/build/**
+/build/**
 
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
