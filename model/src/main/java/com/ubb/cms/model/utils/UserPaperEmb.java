@@ -30,4 +30,20 @@ public class UserPaperEmb implements Serializable {
         this.user = user;
         this.paper = paper;
     }
+
+    public Paper getPaper() {
+        return paper;
+    }
+
+    public void setPaper(Paper paper) {
+        this.paper = paper;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

@@ -1,6 +1,5 @@
 package com.ubb.cms.repository;
 
-import com.ubb.cms.model.Review;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -24,19 +23,18 @@ public class AbstractRepository<T> implements IRepository<T> {
 
     @Override
     public void delete(Integer key) {
-        sessionFactory.getCurrentSession()
-                .delete(
-                        findById(key)
-                );
+        Session session = sessionFactory.getCurrentSession();
+        Transaction transaction = session.beginTransaction();
+        session.delete(findById(key));
+        transaction.commit();
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<T> getAll() {
-
-        Session session = sessionFactory.openSession();
+        Session session = sessionFactory.getCurrentSession();
         Transaction transaction = session.beginTransaction();
-        List<T> list = (List<T>) session.createCriteria(Review.class).list();
+        List<T> list = (List<T>) session.createCriteria(managedEntity).list();
         transaction.commit();
 
         return list;

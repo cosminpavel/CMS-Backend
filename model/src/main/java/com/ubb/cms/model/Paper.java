@@ -4,6 +4,7 @@ package com.ubb.cms.model;
 import com.ubb.cms.model.utils.PaperStatus;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 /**
  * Created by Alexandra Muresan on 4/11/2017.
@@ -33,10 +34,22 @@ public class Paper {
     private PaperStatus status;
 
     @Column(name = "title")
+    @Size(min = 5, max = 255)
     private String title;
 
     @Column(name = "topic")
     private String topic;
+
+    public Paper() {}
+
+    public Paper(ConferenceSession session, User author, Edition edition, PaperStatus status, String title, String topic) {
+        this.session = session;
+        this.author = author;
+        this.edition = edition;
+        this.status = status;
+        this.title = title;
+        this.topic = topic;
+    }
 
     public int getId() {
         return id;
@@ -94,14 +107,12 @@ public class Paper {
         this.topic = topic;
     }
 
-    public Paper() {}
-
-    public Paper(ConferenceSession session, User author, Edition edition, PaperStatus status, String title, String topic) {
-        this.session = session;
-        this.author = author;
-        this.edition = edition;
-        this.status = status;
-        this.title = title;
-        this.topic = topic;
+    @Override
+    public String toString() {
+        return String.format(
+                "{id : %s, title: %s]",
+                id,
+                title
+        );
     }
 }

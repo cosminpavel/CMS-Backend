@@ -9,7 +9,6 @@ import java.io.Serializable;
 @Entity
 @Table(name = "user")
 public class User implements Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -38,6 +37,11 @@ public class User implements Serializable {
         this.name = name;
         this.surname = surname;
         this.tag = tag;
+    }
+
+    public User(Integer id, String username, String password, String email, String name, String surname, String tag) {
+        this(username, password, email, name, surname, tag);
+        this.id = id;
     }
 
     public int getId() {
@@ -94,5 +98,14 @@ public class User implements Serializable {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "[id : %s, email : %s]",
+                id,
+                email
+        );
     }
 }

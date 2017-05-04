@@ -1,4 +1,4 @@
-group 'TestHibernate'
+group 'com.ubb.cms'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
@@ -16,8 +16,8 @@ dependencies {
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.8'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.8'
     compile 'org.springframework:spring-context:4.3.7.RELEASE'
-    compile project(':model');
-    compile project(':repository');
+    compile project(':model')
+    compile project(':server')
 
 
 }

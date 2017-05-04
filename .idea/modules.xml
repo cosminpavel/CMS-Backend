@@ -8,6 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/client.iml" filepath="$PROJECT_DIR$/.idea/modules/client/client.iml" group="client" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/client_main.iml" filepath="$PROJECT_DIR$/.idea/modules/client/client_main.iml" group="client" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/client_test.iml" filepath="$PROJECT_DIR$/.idea/modules/client/client_test.iml" group="client" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/grpc-common.iml" filepath="$PROJECT_DIR$/.idea/modules/grpc-common.iml" group="grpc-common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/grpc-common/grpc-common_main.iml" filepath="$PROJECT_DIR$/.idea/modules/grpc-common/grpc-common_main.iml" group="grpc-common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/grpc-common/grpc-common_test.iml" filepath="$PROJECT_DIR$/.idea/modules/grpc-common/grpc-common_test.iml" group="grpc-common" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/model/model.iml" filepath="$PROJECT_DIR$/.idea/modules/model/model.iml" group="model" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/model/model_main.iml" filepath="$PROJECT_DIR$/.idea/modules/model/model_main.iml" group="model" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/model/model_test.iml" filepath="$PROJECT_DIR$/.idea/modules/model/model_test.iml" group="model" />

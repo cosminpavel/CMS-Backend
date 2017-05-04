@@ -26,6 +26,32 @@ public class Edition implements Serializable {
     @Column(name = "finalDeadline")
     private Date finalDeadline;
 
+    private Date beginningDate;
+    private Date endingDate;
+
+    public Edition(Conference conference, Date beginningDate, Date endingDate, String name, Date paperSubmissionDeadline, Date finalDeadline) {
+        this.conference = conference;
+        this.beginningDate = beginningDate;
+        this.endingDate = endingDate;
+        this.name = name;
+        this.paperSubmissionDeadline = paperSubmissionDeadline;
+        this.finalDeadline = finalDeadline;
+    }
+
+    public Edition(Integer id, Conference conference, Date beginningDate, Date endingDate, String name, Date paperSubmissionDeadline, Date finalDeadline) {
+        this.id = id;
+        this.conference = conference;
+        this.beginningDate = beginningDate;
+        this.endingDate = endingDate;
+        this.name = name;
+        this.paperSubmissionDeadline = paperSubmissionDeadline;
+        this.finalDeadline = finalDeadline;
+    }
+
+    public Edition(){
+
+    }
+
     public int getId() {
         return id;
     }
@@ -77,24 +103,16 @@ public class Edition implements Serializable {
     public Date getFinalDeadline() {
         return finalDeadline;
     }
-
     public void setFinalDeadline(Date finalDeadline) {
         this.finalDeadline = finalDeadline;
     }
 
-    private Date beginningDate;
-    private Date endingDate;
-
-    public Edition(Conference conference, Date beginningDate, Date endingDate, String name, Date paperSubmissionDeadline, Date finalDeadline) {
-        this.conference = conference;
-        this.beginningDate = beginningDate;
-        this.endingDate = endingDate;
-        this.name = name;
-        this.paperSubmissionDeadline = paperSubmissionDeadline;
-        this.finalDeadline = finalDeadline;
-    }
-
-    public Edition(){
-
+    @Override
+    public String toString() {
+        return String.format(
+                "[id : %s, name : %s]",
+                id,
+                name
+        );
     }
 }

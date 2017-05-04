@@ -1,3 +1,0 @@
-database.url=jdbc:mysql://localhost:3306/cms
-database.username=cms_user
-database.password=abcd1234

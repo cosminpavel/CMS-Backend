@@ -28,4 +28,20 @@ public class UserEditionEmb implements Serializable{
         this.user = user;
         this.edition = edition;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Edition getEdition() {
+        return edition;
+    }
+
+    public void setEdition(Edition edition) {
+        this.edition = edition;
+    }
 }

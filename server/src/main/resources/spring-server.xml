@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/util
-        http://www.springframework.org/schema/util/spring-util.xsd">
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.ubb.cms.server"/>
+    <import resource="spring-repository.xml"/>
+    <import resource="spring-services.xml"/>
 
     <bean id="userRepository" class="com.ubb.cms.repository.UserRepository">
 
     </bean>
 
 
-    <bean id="userService" class="UserService">
-        <constructor-arg ref="userRepository" />
+    <bean id="userService" class="com.ubb.cms.services.UserService">
+        <constructor-arg ref="userRepository"/>
     </bean>
 
 
-
-    <bean id="conferenceServer" class="ConferenceServerImplementation" >
-        <constructor-arg ref="userService" />
+    <bean id="conferenceServer" class="ConferenceServerImplementation">
+        <constructor-arg ref="userService"/>
     </bean>
 
 
-
-    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
-        <property name="serviceName" value="Conference"/>
-        <property name="service" ref="conferenceServer"/>
-        <property name="serviceInterface" value="IConferenceServer"/>
-        <property name="servicePort" value="1099"/>
-    </bean>
-
+    <!--<bean class="org.springframework.remoting.rmi.RmiServiceExporter">-->
+        <!--<property name="serviceName" value="Conference"/>-->
+        <!--<property name="service" ref="conferenceServer"/>-->
+        <!--<property name="serviceInterface" value="IConferenceServer"/>-->
+        <!--<property name="servicePort" value="1099"/>-->
+    <!--</bean>-->
 
 </beans>

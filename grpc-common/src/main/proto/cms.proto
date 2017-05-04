@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.ubb.cms.generated";
+option csharp_namespace = "Cmc.sGenerated";
+option java_outer_classname = "cmsProto";
+
+package cms;
+
+import "google/protobuf/timestamp.proto";
+
+// The motorcycling contest service definition.
+service CmsService {
+    // Sends a greeting
+    rpc SayHello (HelloRequest) returns (HelloReply) {
+    }
+
+    // on method to obtain results is to use a response stream
+    rpc GetUsers (GetUsersRequest) returns (stream UserDto) {
+    }
+
+    // another method to obtiain results is to use and reply message
+    // to wrap a list of objects
+    rpc GetEditions (GetEditionsRequest) returns (GetEditionsReply) {
+    }
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+    string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+    string message = 1;
+}
+
+
+message GetUsersRequest {
+}
+
+message UserDto {
+    int64 id = 1;
+    string name = 2;
+    string password = 3;
+    string surname = 4;
+    string tag = 5;
+    string username = 6;
+    string email = 7;
+}
+
+message GetEditionsRequest {
+}
+
+message EditionDto {
+    int64 id = 1;
+    string name = 6;
+    google.protobuf.Timestamp beginningDate = 2;
+    google.protobuf.Timestamp endingDate = 3;
+    google.protobuf.Timestamp finalDeadline = 5;
+    google.protobuf.Timestamp paperSubmissionDeadline = 7;
+    ConferenceDto conference = 8;
+}
+
+message GetEditionsReply {
+    repeated EditionDto Edition = 1;
+}
+message ConferenceDto {
+    int64 id = 1;
+    string name = 2;
+}

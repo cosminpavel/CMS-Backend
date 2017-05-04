@@ -1,7 +1,8 @@
-import java.util.List;
-
 import com.ubb.cms.model.Edition;
 import com.ubb.cms.model.User;
+import com.ubb.cms.services.UserService;
+
+import java.util.List;
 
 /**
  * Created by Raul on 25/04/2017.

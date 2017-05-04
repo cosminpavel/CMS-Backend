@@ -48,7 +48,11 @@ public class Main {
         sf.close();
         System.out.println("Done");*/
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("/spring-repository.xml");
+        testPaperRepository();
+    }
+
+    protected static void testPaperRepository() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-server.xml");
         IRepository<Paper> paperRepository = applicationContext.getBean(PaperRepository.class);
         SessionFactory sessionFactory = applicationContext.getBean(SessionFactory.class);
         IRepository<Edition> editionIRepository = new AbstractRepository<>(sessionFactory, Edition.class);
@@ -95,5 +99,6 @@ public class Main {
         paperRepository.save(test);
 
         List<Paper> all = paperRepository.getAll();
+        all.forEach(System.out::println);
     }
 }
